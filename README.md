@@ -6,4 +6,4 @@
 - 🎏 Espero que este repositorio sea de tu agrado!👍
 - 📮 Sus.
 
-En este repositorio encontraras información, actividades y tareas relacionadas con la Desarrollo de APIs 📚 💻!!
+En este repositorio encontraras información, actividades y tareas relacionadas con el Desarrollo de APIs 📚 💻!!
