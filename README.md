@@ -2,7 +2,7 @@
 
 - 👋 Hola, Soy @Andres-Hernandez-Sis.
 - 👀 Estoy interesado en la tecnología y como esta influye en nuestra vida diaria.
-- 🌱 Actualmente estoy aprendiendo Programación Web!
+- 🌱 Actualmente estoy aprendiendo Desarrollo de API REST!
 - 🎏 Espero que este repositorio sea de tu agrado!👍
 - 📮 Sus.
 
