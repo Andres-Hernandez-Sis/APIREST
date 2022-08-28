@@ -2,29 +2,28 @@
 
 HTTP define un conjunto de métodos de petición para indicar la acción que se desea realizar para un recurso determinado. Aunque estos también pueden ser sustantivos, estos métodos de solicitud a veces son llamados HTTP verbs.
 
-## GET
+### GET
 Solicita una representacion de un recurso especifico. Las peticiones que usan GET solo reben recuperar datos.
 
-
-## HEAD
+### HEAD
 Pide una respuesta identica a la de una petición GET, pero sin el cuerpo de la respuesta.
 
-## POST
+### POST
 se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor.
 
-## PUT
+### PUT
 El modo PUT reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición.
 
-## DELETE
+### DELETE
 Borra un recurso en espeficico.
 
-## CONNECT
+### CONNECT
 Establece un tunes hacia el servidor identificado por el recurso.
 
-## OPTIONS 
+### OPTIONS 
 Se utiliza para describir las opciones de comunicacion para el recurso de destino.
 
-## TRACE 
+### TRACE 
 Realiza una prueba en bucle de retorno de mensaje a lo largo de la ruta al recurso de destino.
 
 ![img](https://cdn.alvarofontela.com/wp-content/uploads/servertiming.jpg) 
@@ -50,7 +49,7 @@ Son respuestas de carácter informativo e indican que el navegador puede continu
   <Br>
 
 - **103 Checkpoint**: Se utiliza para reanudar una petición que previamente fue perdida o cancelada.
-
+<Br>
 
 ## Códigos de estado 2xx.
 
@@ -70,6 +69,7 @@ Son respuestas satisfactorias, Simplemente indican que la petición fue procesad
 - **206 Partial Content**: Se utiliza cuando la petición se completa, pero solo se devuelve parte del contenido solicitado.
   <Br>
 - **207 Multi-Status**:  Se devuelve un archivo XML que contiene varias respuestas diferentes, en función de las peticiones realizadas.
+<Br>
 
 ## Códigos de estado 3xx. 
 
@@ -100,6 +100,7 @@ Estos códigos HTTP hacen referencia a cuando el navegador tiene que realizar un
  <Br>
 
 - **308 Permanent Redirect**: El recurso que solicita el navegador se encuentra en otra ubicación y el cambio es permanente. A diferencia del código HTTP 301, no se cambia el método HTTP para la nueva petición.
+<Br>
 
 ## Códigos de estado 4xx.
 
@@ -134,7 +135,7 @@ Hacen referencia a errores producidos por el navegador web. En estos casos, el u
 - **423 Locked**: Se muestra este código HTTP cuando el recurso solicitado está bloqueado.
   <Br>
 - **429 Too Many Request**: El navegador realiza demasiadas peticiones en un período de tiempo determinado.
-
+<Br>
 
 ## Códigos de estado 5xx. 
 
