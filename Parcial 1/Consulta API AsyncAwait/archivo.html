@@ -4,23 +4,26 @@
         <meta chartset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Document Async Await</title>
+        <link rel="stylesheet" href="./fondo.css">
     </head>
     <body>
         <button id="boton">Hacer Fetch</button>
-        <img id="imagen" width="300" height="400">
-        
-        <script>
+        <img id="imagen" width="350" height="400">
+        <p>API: https://docs.nekos.best/examples/javascript.html</p>
+        <script>         
+
             document.getElementById('boton').addEventListener('click',async function() {
-            let dato = await hacerPeticion();
-            console.log(dato);
-            document.getElementById('imagen').src=dato.url;
+            let datos = await hacerPeticion();
+            console.log(datos);
+            document.getElementById('imagen').src=datos.results[0].url
             });
 
             async function hacerPeticion() {
-            let respuesta = await fetch("https://api.waifu.pics/sfw/waifu");
+            let respuesta = await fetch("https://nekos.best/api/v2/neko");
             let datojson = await respuesta.json();
-            return datojson;
+            return datojson;      
             }
+
         </script>
     </body>
 </html>

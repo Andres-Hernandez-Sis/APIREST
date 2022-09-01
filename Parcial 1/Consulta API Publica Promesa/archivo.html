@@ -3,21 +3,24 @@
     <head>
         <meta chartset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="./fondo.css">
         <title>Document</title>
     </head>
     <body>
         <button id="boton">Consultar</button>
         <img id="imagen" width="300" height="400">
-        
+        <P>API: https://docs.nekos.best/examples/javascript.html</P>
         <script>
-            document.getElementById('boton').addEventListener('click',function() {
-            hacerPeticion();
-             });
+            document.getElementById('boton').addEventListener('click',function() 
+            {
+                hacerPeticion();
+            });
 
-            function hacerPeticion() {
-            fetch("https://api.waifu.pics/sfw/waifu")
+            function hacerPeticion() 
+            {
+            fetch("https://nekos.best/api/v2/neko")
             .then(respuesta => respuesta.json())
-            .then(datos => document.getElementById('imagen').src=datos.url)
+            .then (datos => document.getElementById('imagen').src=datos.results[0].url)
             }
         </script>
     </body>
