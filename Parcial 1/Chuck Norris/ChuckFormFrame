@@ -1,0 +1,18 @@
+<html>
+<header>
+    <title>"Chuck norris JasonP"</title>
+</header>
+<body>
+    <form target="broma" method="GET" action="http://api.icndb.com/jokes/random/">
+    <label for="firstName">Nombre</label>
+    <input id="firstName" type="text" name="firstName"><br>
+
+    <label for="lastName">Apellido</label>
+    <input id="lastName" type="text" name="lastName"><br>
+
+    <button type="submit" id="btnConsulta">Broma</button><br>
+    
+    </form>
+    <iframe name="broma"></iframe>
+</body>
+</html>
