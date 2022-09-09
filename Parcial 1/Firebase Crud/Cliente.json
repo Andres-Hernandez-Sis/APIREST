@@ -1,0 +1,16 @@
+{
+    "Clientes" :{ 
+        "100" : {
+            "Nombre ": "Carlos Andres",
+            "Apellidos" : "Hernandez Lopez",
+            "Edad" : "21"
+        },
+        "200" : {
+            "Nombre ": "Pepe Juarez",
+            "Apellidos" : "Fernandez Gonzalez",
+            "Edad" : "30"
+        }       
+    }
+}
+
+    
