@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Documento</title>
+</head>
+<body>
+    <button id="boton">Hacer Fetch</button>
+    <script>
+        document.getElementById('boton').addEventListener('click',function(){
+                hacerPeticion();
+            });
+
+            function hacerPeticion() 
+            {
+            fetch("http://localhost:8082")
+            .then(respuesta => respuesta.text())
+            .then (datos => console.log(datos))
+            }
+    </script>
+</body>   
+</html>
