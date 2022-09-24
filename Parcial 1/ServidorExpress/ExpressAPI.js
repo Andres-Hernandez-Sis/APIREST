@@ -17,6 +17,7 @@ app.post((req, res, next) =>{
     next();
 })
 
+
 // Funciones post 22 Sep 22
 app.post('/texto',(req, res) =>{
     console.log(req.body)
@@ -29,16 +30,18 @@ app.post('/texto',(req, res) =>{
              })
 })
 
+
 app.post('/json',(req, res) =>{
     console.log(req.body.nombre)
-    let cadena =- "Hola" + req.body.nombre + " " + req.body.apellido + "como estas?"
+    let cadena = "Hola " + req.body.Nombre + " " + req.body.Apellido + " como estas?"
     res.json({saludo:cadena})
 })
 
-app.get('mayusculas/:cadena', (req, res) =>{
+app.get('/mayusculas/:cadena', (req, res) =>{
     console.log(req.params)
-    res.send(req.params)
+    res.send(req.params.cadena.toUpperCase())
 })
+
 
 app.get('/suma', (req, res) => {
     console.log(req.query)
