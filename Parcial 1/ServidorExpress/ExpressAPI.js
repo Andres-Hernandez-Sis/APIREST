@@ -1,12 +1,21 @@
 var express = require('express')
 var cors = require('cors')
-const { request } = require('express')
-
-var app = express()
+//const request = require('express')
+var fs = require('fs');
+var morgan = require('morgan');
+var path = require('path');
+const app = express();
 
 app.use(cors({origin: "http://localhost"}))
 app.use(express.text())
 app.use(express.json())
+ 
+// create a write stream (in append mode)
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+ 
+// setup the logger
+app.use(morgan('combined', { stream: accessLogStream }))
+
 
 //Funcion MiddleWare 23 Sep 22 , Una funcion que tiene a tu request y a tu siguiente middle o siguiente funcion.
 app.post((req, res, next) =>{
@@ -54,7 +63,7 @@ app.get('/suma', (req, res) => {
 
 //Funciones de Status Web 21 Sep 22
 app.get('/', (req, res) => {
-    res.sendFile('./static/index.html',{root:__dirname},(err)=>(console.log('ArchivoEcontrao')))
+    res.sendFile('./static/index.html',{root:__dirname},(err)=>(console.log('Archivo Econtrado')))
 })
 
 app.post('/', (req, res) => {
