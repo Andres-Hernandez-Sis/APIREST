@@ -1,6 +1,5 @@
 var express = require('express')
 var cors = require('cors')
-
 var app = express()
 
 app.use(cors({ origin:"*"}))
@@ -16,7 +15,6 @@ app.post('/', (req, res) => {
 app.listen(8082, () => {
     console.log('Servidor Express en Puerto 8082')
 })
-
 
 
 

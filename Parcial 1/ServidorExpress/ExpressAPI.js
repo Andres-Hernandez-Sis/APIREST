@@ -1,10 +1,13 @@
-var express = require('express')
-var cors = require('cors')
+var express  = require('express')
+var cors     = require('cors')
 //const request = require('express')
-var fs = require('fs');
-var morgan = require('morgan');
-var path = require('path');
-const app = express();
+var fs       = require('fs');
+var morgan   = require('morgan');
+var path     = require('path');
+const app    = express();
+const cadena = require('./cadena');
+
+
 
 app.use(cors({origin: "http://localhost"}))
 app.use(express.text())
@@ -25,6 +28,25 @@ app.post((req, res, next) =>{
     console.log("Segunda funcion middleware");
     next();
 })
+
+// 26 Sep 2022 Creando Modulos
+app.post('/texto' , (req, res) => {
+    console.log(req.body);
+    let may = cadena.PasaMayusculas(req.body);
+    let sinesp = cadena.QuitarEspacios(req.body);
+    let longi = cadena.RetornarLongitud(req.body);
+
+    res.json({
+        mayusculas: may,
+        sinespacios: sinesp,
+        longitud: longi
+    })
+})
+
+
+
+
+
 
 
 // Funciones post 22 Sep 22
