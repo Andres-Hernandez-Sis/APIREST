@@ -21,7 +21,7 @@ app.use(morgan('combined', { stream: accessLogStream }))
 
 
 //Funcion MiddleWare 23 Sep 22 , Una funcion que tiene a tu request y a tu siguiente middle o siguiente funcion.
-app.post((req, res, next) =>{
+app.use('/',(req, res, next) =>{
     console.log("Esta es una funcion middleware");
     next();
 },(req, res, next) =>{
