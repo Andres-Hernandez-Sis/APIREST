@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>ModuloSM</title>
+</head>
+<body>
+    <!-- Modulo import estatico 11 Oct 22 -->
+    <label for="lblcadena">Cadena</label>
+    <input id="cadena" type="text">
+    <button id="btn">Mayusculas</button>
+    <br>
+    <input id="Resultado" type="text">
+    <input id="Resultado1" type="text">
+    <input id="Resultado2" type="text">
+    
+    <script type="module">
+        import * as funciones from './moduloesm.js'
+        document.getElementById("btn").addEventListener("click",function()
+        {
+            let cadena = document.getElementById("cadena").value;
+            let cadenamay = funciones.PasaMayusculas(cadena);
+            console.log(cadenamay);
+            document.getElementById("Resultado").value=cadenamay;
+        });
+
+        document.getElementById("btn").addEventListener("click",function()
+        {
+            let cadena = document.getElementById("cadena").value;
+            let cadenasinesp = funciones.QuitarEspacios(cadena);
+            console.log(cadenasinesp);
+            document.getElementById("Resultado1").value = cadenasinesp;
+        });
+
+        document.getElementById("btn").addEventListener("click",function()
+        {
+            let cadena = document.getElementById("cadena").value;
+            let cadenalong = funciones.RetornarLongitud(cadena);
+            console.log(cadenalong);
+            document.getElementById("Resultado2").value = cadenalong;
+        });
+
+
+    </script>
+</body>
+</html>

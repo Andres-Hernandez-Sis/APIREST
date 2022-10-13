@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>ModuloSM</title>
+</head>
+<body>
+    <label for="lblcadena">Cadena</label>
+    <input id="cadena" type="text">
+    <button id="btn">Mayusculas</button>
+    <br>
+    <input id="Resultado" type="text">
+    <input id="Resultado1" type="text">
+    <input id="Resultado2" type="text">
+
+    <!-- Modulos import dinamico 12 Oct 22 -->
+    <script >
+        document.getElementById("btn").addEventListener("click",function(){
+            import('./moduloesm.js')  
+              
+            .then(function(moduloesm){
+                let CadMay = moduloesm.PasaMayusculas(document.getElementById("cadena").value);
+                document.getElementById("Resultado").value = CadMay;
+            }) 
+
+            .then(function(moduloesm){
+                let cadenasinesp = moduloesm.QuitarEspacios(document.getElementById("cadena").value);
+                document.getElementById("Resultado1").value = cadenasinesp;
+            })
+
+            .then(function(moduloesm){
+                let cadenalong = moduloesm.RetornarLongitud(document.getElementById("cadena").value);
+                document.getElementById("Resultado2").value = cadenalong;
+            })
+        });
+    </script>
+
+</body>
+</html>
