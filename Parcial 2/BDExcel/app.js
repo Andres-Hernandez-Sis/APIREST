@@ -1,5 +1,5 @@
-let mysql = require('mysql')
 let json2xls  = require('json2xls')
+let mysql = require('mysql')
 let fs = require('fs')
 
 var con = mysql.createConnection({
@@ -12,9 +12,8 @@ con.connect();
 
 con.query('SELECT * FROM cliente', function(error, results, fields) {
     if(error) throw error;
-    console.log(results);
-
     var xls = json2xls(results)
+    console.log(results);
     fs.writeFileSync('./Parcial 2/BaseDatos/data.xlsx', xls, 'binary')
 });
 
