@@ -19,14 +19,10 @@
             .then(function(moduloesm){
                 let CadMay = moduloesm.PasaMayusculas(document.getElementById("cadena").value);
                 document.getElementById("Resultado").value = CadMay;
-            }) 
 
-            .then(function(moduloesm){
                 let cadenasinesp = moduloesm.QuitarEspacios(document.getElementById("cadena").value);
                 document.getElementById("Resultado1").value = cadenasinesp;
-            })
 
-            .then(function(moduloesm){
                 let cadenalong = moduloesm.RetornarLongitud(document.getElementById("cadena").value);
                 document.getElementById("Resultado2").value = cadenalong;
             })

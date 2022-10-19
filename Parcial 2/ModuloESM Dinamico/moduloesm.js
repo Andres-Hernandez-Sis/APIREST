@@ -4,7 +4,7 @@ export function PasaMayusculas(cadena){
 
 export function QuitarEspacios(cadena){
     // return cadena.trim();
-    return cadena.replace(/ /g,"")
+    return cadena.replace(/ /g,"");
 }
 
 export function RetornarLongitud(cadena){
