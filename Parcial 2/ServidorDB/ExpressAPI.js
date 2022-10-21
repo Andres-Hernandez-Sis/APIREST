@@ -6,8 +6,6 @@ var path     = require('path');
 const app    = express();
 const cadena = require('./cadena');
 let mysql = require('mysql')
-const crud = require('./CRUD')
-
 app.use(cors({origin: "http://localhost"}))
 app.use(express.text())
 app.use(express.json())
@@ -39,23 +37,6 @@ app.post('/json' , (req, res) => {
 })
 
 
-// Peticion POST, para agregar a la base de datos - Miercoles 19 Octubre 2022
-// app.post('/', (req, res) =>{
-    
-//     var con = mysql.createConnection({
-//         host : '127.0.0.1',
-//         user : 'root',
-//         database : 'Restaurante'
-//     });
-    
-
-//     con.connect();
-//     con.query('insert into cliente (id_cliente,nombre, telefono, hora_reservacion) values'+ '('+ req.params.id_cliente,req.params.nombre,req.params.apellido,req.params.telefono,req.params.hora_reservacion  +')' ,function(error, results, fields) {
-//         if(error) throw error; `La suma es: ${suma}`
-//         res.send(results);
-//     });
-//     con.end();
-// })
 
 
 

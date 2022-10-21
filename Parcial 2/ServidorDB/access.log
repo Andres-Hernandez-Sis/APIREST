@@ -59,3 +59,6 @@
 ::ffff:127.0.0.1 - - [27/Sep/2022:13:23:55 +0000] "POST /texto HTTP/1.1" 200 82 "-" "Thunder Client (https://www.thunderclient.com)"
 ::ffff:127.0.0.1 - - [27/Sep/2022:13:35:01 +0000] "POST /texto HTTP/1.1" 200 82 "-" "Thunder Client (https://www.thunderclient.com)"
 ::1 - - [27/Sep/2022:13:35:06 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+::1 - - [20/Oct/2022:13:12:15 +0000] "GET / HTTP/1.1" 200 123 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47"
+::1 - - [20/Oct/2022:13:14:28 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47"
+::1 - - [20/Oct/2022:13:14:51 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47"
