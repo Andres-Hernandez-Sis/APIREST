@@ -2,13 +2,14 @@
 Vimos analogia de Mesero. Como funciona Sincrono y Asincrono.
 
 MOTORV8 FUNCIONAMIENTO
+
 - CallStack
 - Memory heap
 - Host API
 - Event Loop
 - Task/Callback
 
-Call Stack: 
+Call Stack:
 Js maneja una sola pila de llamadas, esta estructura es tipo LIFO
 
 Memory Heap:
@@ -22,8 +23,16 @@ diversas funcionalidades. ]
 Event Loop.
 Cicli infinito que escuhca si hay una lista de tareas en el Task/CallBack
 
-Tarea 4 Oct 22 = Dibujo de como funciona el motor Js En Asincronia, con descripcion de los pasos. 
-
+Tarea 4 Oct 22 = Dibujo de como funciona el motor Js En Asincronia, con descripcion de los pasos.
 
 -- 12 Oct 22
 Tambien podemos hacer imports dinamicos
+
+
+-- 25 Oct 
+
+What is Grid.js?
+
+Es un modulo que se puede instalar, importar, o incluir en html.
+
+Tarea agregada a Teams-

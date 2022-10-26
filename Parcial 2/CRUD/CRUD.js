@@ -1,6 +1,9 @@
+const cors = require('cors');
 var express  = require('express');
 const app    = express();
 const crud   = require('./metodos');
+
+app.use(cors({origin: "*"}));
 
 app.use(express.text());
 app.use(express.json());
