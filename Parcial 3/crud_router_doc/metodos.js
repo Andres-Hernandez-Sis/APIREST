@@ -43,7 +43,7 @@ function Insertar(cliente) {
                 resolve("Se inserto un nuevo registro (●ˇ∀ˇ●)")
             }
             else {
-                reject(error + "No se pudo insertar el registro:(")
+                reject(error + " No se pudo insertar el registro （；´д｀）ゞ")
             }
         })
     });
@@ -54,7 +54,7 @@ function Eliminar(id) {
     return new Promise(function (resolve, reject) {
         con.query(`delete from cliente where id_cliente=? `, [id], function (error, results) {
             if (results.affectedRows > 0) {
-                resolve("Se elimino correctamente ( •̀ ω •́ )✧ " + results.affectedRows);
+                resolve("Se elimino correctamente ( •̀ ω •́ )✧ :" + results.affectedRows + ' Registro(s)');
             }
             else {
                 reject("Ocurrio un error, no se borro el registro （；´д｀）ゞ");
@@ -69,9 +69,8 @@ function Modificar(cliente) {
         con.query(`UPDATE cliente SET nombre=?, telefono=?, hora_reservacion=? WHERE id_cliente = ?`, [cliente.nombre, cliente.telefono, cliente.hora_reservacion, cliente.id_cliente], function (error, results) {
             if (error) {
                 console.log(error)
-                //reject(new Error("No se pudo modificar （；´д｀）ゞ"))
             } else {
-                resolve("Se modifico: " + results.affectedRows)
+                resolve("Se modifico: " + results.affectedRows + ' Registro(s)')
             }
         })
     });

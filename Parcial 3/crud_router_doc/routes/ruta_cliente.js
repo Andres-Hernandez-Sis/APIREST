@@ -3,15 +3,17 @@ var express  = require('express');
 var router = express.Router();
 
 /**
- * @swagger
- * /:
- *  get:
- *   Summary: Información de los registros existentes.
- *   responses:
- *    200:
- *     description: Devuelve todos los clientes registrados en la tabla, no es necesario enviar parametros.
+* @swagger
+* paths:
+*   /Cliente/:
+*     get:        
+*      summary: Consulta los registros de los clientes
+*      responses:
+*       200:
+*        description: OK - Se devolvieron todos los clientes registrados en la tabla
+*       404:
+*        description: ERROR - No se encontraron clientes
 */
-
 router.get('/', (req, res) =>{ 
     crud.Buscar().then(function(results){
         res.send(results)
@@ -19,15 +21,24 @@ router.get('/', (req, res) =>{
 });
 
 /**
- * @swagger
- * /:
-*  get:        
-*   summary: Información de los objetos en la tabla.
-*   responses:
-*    200:
-*     description: Devuelve los clientes registrados en la tabla, de acuerdo a un id enviado.
+* @swagger
+* paths:
+*   /Cliente/{id_cliente}:
+*     get:
+*       summary: Consulta los registros de un cliente dado un Id
+*       parameters:
+*       - in: path
+*         name: id_cliente
+*         required: true
+*         example: 1
+*         schema:
+*           type: integer
+*       responses:
+*         200:
+*           description: OK - Se devolvio el cliente registrado.
+*         404:
+*           description: ERROR - No se encontraron clientes
 */
-
 router.get('/:id_cliente', (req, res) =>{ 
     crud.BuscarCliente(req.params.id_cliente).then(function(results){
         res.send(results)
@@ -35,16 +46,34 @@ router.get('/:id_cliente', (req, res) =>{
 });
 
 /**
- * @swagger
- * /:
- *  post:
- *   summary: Agregar un nuevo registro.
- *   responses:
- *    200:
- *     description: Permite agregar un nuevo cliente.
+*@swagger
+*paths:
+*  /Cliente/NuevoCliente:
+*    post:
+*      summary: Añade un nuevo cliente
+*      requestBody:
+*        content:
+*          application/json:
+*            schema:
+*              type: object
+*              properties:
+*                id_cliente:
+*                  type: string
+*                telefono:
+*                  type: integer
+*                hora_reservacion:
+*                  type: integer
+*                example:
+*                  id_cliente: 10
+*              example:   # Sample object
+*                id_cliente: 10
+*                nombre: Carlos
+*                telefono: 8671234433
+*                hora_reservacion: 12
+*      responses:
+*        '200':
+*          description: OK - Se añadio un nuevo cliente.
 */
-
-// Peticion Post Insertar
 router.post('/NuevoCliente', (req, res) =>{ 
     let cliente = {
         "id_cliente" : req.body.id_cliente,
@@ -58,16 +87,36 @@ router.post('/NuevoCliente', (req, res) =>{
 });
 
 /**
- * @swagger
- * /:
- *  patch:
- *   summary: Modificar un registro.
- *   responses:
- *    200:
- *     description: Permite modificar el registro de un cliente.
+*@swagger
+*paths:
+*  /Cliente/DatosClientes:
+*    patch:
+*      summary: Modifica un cliente registrado
+*      requestBody:
+*        content:
+*          application/json:
+*            schema:
+*              type: object
+*              properties:
+*                id_cliente:
+*                  type: string
+*                telefono:
+*                  type: integer
+*                hora_reservacion:
+*                  type: integer
+*                example:
+*                  id_cliente: 10
+*              example:   # Sample object
+*                id_cliente: 10
+*                nombre: Carlos
+*                telefono: 8671234433
+*                hora_reservacion: 12
+*      responses:
+*        '200':
+*          description: OK - Se edito un cliente.
+*        '404':
+*          description: Not Found - No se encontraron clientes
 */
-
-// Peticion Modificar
 router.patch('/DatosClientes',(req,res)=> {
     let cliente = {
         "id_cliente" : req.body.id_cliente,
@@ -80,16 +129,24 @@ router.patch('/DatosClientes',(req,res)=> {
     })
 });
 
-/**
- * @swagger
- * /:
- *  delete:
- *   summary: Eliminar un registro existente.
- *   responses:
- *    200:
- *     description: Permite eliminar un registro de cliente existente.
-*/
 
+/**
+* @swagger
+* paths:
+*   /Cliente/BajaCliente/{id_cliente}:
+*     delete:
+*       summary: Elimina un registro.
+*       parameters:
+*       - in: path
+*         name: id_cliente
+*         required: true
+*         example: 1
+*         schema:
+*           type: integer
+*       responses:
+*         200:
+*          description: OK- Se elimino un registro de cliente existente.
+*/
 //Peticion Delete
 router.delete('/BajaCliente/:id_cliente',(req,res)=> {
     console.log(req.params);
